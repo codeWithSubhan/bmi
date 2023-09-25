@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 450px;
+            box-shadow: 0 0 10px gainsboro;
+            text-align: center;
+
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+            margin: 20px;
+        }
+
+        #love {
+            width: 50%;
+            margin: 40px auto;
+            height: 30px;
+        }
+    </STYle>
+</head>
+
+<body>
+    <div class="box">
+       
+       <form action="" onsubmit="return false">
+
+           <input type="text" placeholder="weight in Kg" id="weight" required>
+           <input type="text" placeholder="height in Ft" id="height" required><br>
+           <input type="text" placeholder="BMI Value" id="BMIVALUE"> <br>
+           <input type="submit" value="click here" onclick="getData()"><br>
+           <p>A healthy BMI ranges btwn 19 and 25.</p>
+        </form>
+    </div>
+
+    <script>
+        function getData() {
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+
+            height = height * 12    //now in inch
+            height = height * 0.025 //now it's meter
+
+             var BMI = (weight / (height * height))
+             BMI= Math.round(BMI)
+            document.getElementById("BMIVALUE").value = BMI;
+
+            // alert(height)
+        }
+    </script>
+</body>
+
+</html>
